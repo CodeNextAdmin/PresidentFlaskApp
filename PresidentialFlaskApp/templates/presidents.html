@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Presidential Information</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='templates/styles.css') }}">
+
+</head>
+<body>
+  <h1>Presidential Information</h1>
+  <ul>
+    {% for president, info in presidents.items() %}
+      <li>
+        <img src="{{ info['image_url'] }}" alt="{{ info['name'] }} portrait">
+        {{ info['name'] }} was president number {{ info['order'] }}.
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
